@@ -1,0 +1,111 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Importamos solo la fuente profesional 'Inter' */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+body {
+  /* Fondo gris claro, más suave a la vista que el blanco puro */
+  background-color: #f3f4f6; /* bg-gray-100 */
+  color: #1f2937; /* text-gray-800 */
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar adaptado al tema claro */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #e5e7eb; /* bg-gray-200 */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #2563eb; /* bg-blue-600 */
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8; /* bg-blue-700 */
+}
+
+/* --- Clases de utilidad actualizadas --- */
+
+/* Animaciones (sin cambios) */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-slideDown { animation: slideDown 0.3s ease-out; }
+.animate-slideUp { animation: slideUp 0.3s ease-out; }
+.animate-fadeIn { animation: fadeIn 0.5s ease-out; }
+
+/* Tarjeta moderna: Ahora es blanca con sombra */
+.card-modern {
+  @apply bg-white shadow-lg rounded-xl border border-gray-200;
+}
+
+/* Texto de gradiente eliminado, ya no se usa */
+.gradient-text {
+  /* Esta clase ya no es necesaria, la reemplazamos por texto azul sólido */
+  @apply text-blue-700;
+}
+
+/* Botones actualizados */
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply border border-gray-300 text-gray-700 hover:bg-gray-50 transition-all duration-200;
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white font-semibold transition-all duration-200 shadow-sm;
+}
+
+.btn-success {
+  @apply bg-green-600 hover:bg-green-700 text-white font-semibold transition-all duration-200 shadow-sm;
+}
+
+/* Campos de entrada (Inputs) actualizados */
+.input-modern {
+  @apply w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all;
+}
+
+.input-modern::placeholder {
+  color: #9ca3af; /* placeholder-gray-400 */
+}
+
+/* Badges (Etiquetas) actualizados */
+.badge-cyan {
+  @apply inline-flex items-center px-3 py-1 bg-blue-100 border border-blue-200 rounded-full text-blue-800 text-xs font-semibold;
+}
+
+.badge-green {
+  @apply inline-flex items-center px-3 py-1 bg-green-100 border border-green-200 rounded-full text-green-800 text-xs font-semibold;
+}
+
+.badge-red {
+  @apply inline-flex items-center px-3 py-1 bg-red-100 border border-red-200 rounded-full text-red-800 text-xs font-semibold;
+}
+
+.badge-gray {
+  @apply inline-flex items-center px-3 py-1 bg-gray-100 border border-gray-200 rounded-full text-gray-700 text-xs font-semibold;
+}
